@@ -1,0 +1,228 @@
+
+
+ <!-- Section Css ! -->
+
+{{ 'gift-guide-banner.css' | asset_url | stylesheet_tag }}
+
+{% assign data = section.settings %}
+<style> 
+  .banner {
+    background-image: url('{{ data.bg_image | img_url: 'master' }}');
+  }
+  @media (max-width: 768px) {
+    .banner {
+      background-image: url('{{ data.bg_image_mobile | img_url: 'master' }}');
+    }
+  }
+</style>
+<div class="main-wrapper-banner">
+  <!-- Nav Bar ! -->
+  <nav id="nav-bar" class="nav-bar">
+    <svg
+      id="menu-icon"
+      width="20"
+      height="13"
+      viewBox="0 0 20 13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon"
+    >
+      <path d="M1 6.5H19" stroke="black" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M1 1.5H19" stroke="black" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M1 11.5H19" stroke="black" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg
+      id="close-icon"
+      width="15"
+      height="15"
+      viewBox="0 0 15 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon hidden"
+    >
+      <path d="M1 13.9997L13.7279 1.27177" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M1 1.00031L13.7279 13.7282" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+
+    <!-- Logo ! -->
+    {% if data.nav_logo != blank %}
+      <img src="{{ data.nav_logo | img_url: '151x19' }}" class="nav-logo" width="151px" height="19px">
+
+    {% else %}
+      <p>Tisso Vison</p>
+    {% endif %}
+
+    <!-- Center Text ! -->
+    <p class="nav-text">{{ data.nav_text }}</p>
+
+    <!-- Right Button ! -->
+
+    <button class="nav-btn">
+      {{ section.settings.nav_btn_text }}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="12"
+        viewBox="0 0 26 12"
+        fill="none"
+        class="nav-btn-arrow"
+      >
+        <path
+            d="M1.22205 4.80469L0.472046 4.80469L0.472046 6.30469L1.22205 6.30469L1.22205 4.80469ZM25.7524 6.08502C26.0453 5.79213 26.0453 5.31725 25.7524 5.02436L20.9794 0.251388C20.6865 -0.0415053 20.2116 -0.0415053 19.9187 0.251388C19.6259 0.544281 19.6259 1.01916 19.9187 1.31205L24.1614 5.55469L19.9187 9.79733C19.6259 10.0902 19.6259 10.5651 19.9187 10.858C20.2116 11.1509 20.6865 11.1509 20.9794 10.858L25.7524 6.08502ZM1.22205 6.30469L25.222 6.30469L25.222 4.80469L1.22205 4.80469L1.22205 6.30469Z" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Nav Mobile Version ! -->
+
+  <div id="gift-mobile" class="gift-mobile">
+    <p class="gift-text">Find the ideal gift for your loved ones.</p>
+    <button class="gift-btn">
+      CHOOSE GIFT
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="26"
+        height="12"
+        viewBox="0 0 26 12"
+        fill="none"
+        class="gift-btn-arrow"
+      >
+        <path
+            d="M1.22205 4.80469L0.472046 4.80469L0.472046 6.30469L1.22205 6.30469L1.22205 4.80469ZM25.7524 6.08502C26.0453 5.79213 26.0453 5.31725 25.7524 5.02436L20.9794 0.251388C20.6865 -0.0415053 20.2116 -0.0415053 19.9187 0.251388C19.6259 0.544281 19.6259 1.01916 19.9187 1.31205L24.1614 5.55469L19.9187 9.79733C19.6259 10.0902 19.6259 10.5651 19.9187 10.858C20.2116 11.1509 20.6865 11.1509 20.9794 10.858L25.7524 6.08502ZM1.22205 6.30469L25.222 6.30469L25.222 4.80469L1.22205 4.80469L1.22205 6.30469Z" />
+      </svg>
+    </button>
+  </div> 
+
+  <!-- Banner Mobile Text ! -->
+
+  <div class="banner-top-content-mobile">
+    <p class="banner-top-heading-mobile">{{ data.banner_heading_mobile }}</p>
+    <p class="banner-top-description-mobile">{{ data.banner_description_mobile }}</p>
+  </div>
+  <!-- Main Banner ! -->
+  <div class="banner">
+    <!-- Banner Content  ! -->
+    <div class="banner-content">
+      <p class="banner-heading">{{ data.banner_heading }}</p>
+      <p class="banner-description">{{ data.banner_description }}</p>
+      <button class="banner-btn">
+        {{ data.banner_btn_text }}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="12"
+          viewBox="0 0 26 12"
+          fill="none"
+          class="banner-btn-arrow"
+        >
+          <path
+              d="M1.22205 4.80469L0.472046 4.80469L0.472046 6.30469L1.22205 6.30469L1.22205 4.80469ZM25.7524 6.08502C26.0453 5.79213 26.0453 5.31725 25.7524 5.02436L20.9794 0.251388C20.6865 -0.0415053 20.2116 -0.0415053 19.9187 0.251388C19.6259 0.544281 19.6259 1.01916 19.9187 1.31205L24.1614 5.55469L19.9187 9.79733C19.6259 10.0902 19.6259 10.5651 19.9187 10.858C20.2116 11.1509 20.6865 11.1509 20.9794 10.858L25.7524 6.08502ZM1.22205 6.30469L25.222 6.30469L25.222 4.80469L1.22205 4.80469L1.22205 6.30469Z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Bottom Announcement  text ! -->
+  <div class="bottom-nav">{{ data.bottom_nav_text }}</div>
+  <div class="bottom-nav-mobile">{{ data.bottom_nav_text_mobile }}</div>
+</div>
+<script src="{{ 'gift-guide-banner.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Ecom Test Gift Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "nav_logo",
+      "label": "Navigation Logo"
+    },
+    {
+      "type": "text",
+      "id": "nav_text",
+      "label": "Navigation Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "nav_btn_text",
+      "label": "Nav Button Text",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "header",
+      "content": "Banner Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Background Image (Mobile)"
+    },
+    {
+      "type": "text",
+      "id": "banner_heading",
+      "label": "Banner Heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_description",
+      "label": "Banner Description",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "banner_heading_mobile",
+      "label": "Banner Heading (Mobile)",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "banner_description_mobile",
+      "label": "Banner Description (Mobile)",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination."
+    },
+    {
+      "type": "url",
+      "id": "banner_btn_link",
+      "label": "Banner Button Link"
+    },
+    {
+      "type": "text",
+      "id": "banner_btn_text",
+      "label": "Banner Button Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "text",
+      "id": "bottom_nav_text",
+      "label": "Bottom Navigation Text",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    },
+    {
+      "type": "text",
+      "id": "bottom_nav_text_mobile",
+      "label": "Bottom Navigation Text (Mobile)",
+      "default": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR"
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Ecom Test Gift Banner"
+    }
+  ]
+}
+{% endschema %}
