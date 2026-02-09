@@ -37,7 +37,6 @@ declare global {
 
   interface Window {
     Shopify: Shopify;
-    current_open_product?: any;
   }
 
   declare const Shopify: Shopify;
